@@ -4,7 +4,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import image from '../images/beach-waldo.jpg'
 import image2 from '../images/snow-waldo.jpg'
 import './carousel.css'
-const Carousel = () =>{
+const Carousel = ({startGame}) =>{
     const responsive = {
         0: { items: 1 },
         568: { items: 1 },
@@ -16,7 +16,8 @@ const Carousel = () =>{
         <div className='card'>
             <div className="card_container">
                 <img src={image} alt=""/>
-                <h1>Welcome</h1>
+                <h1>Welcome to beach wally</h1>
+                <button onClick={() => startGame(image)}>Start</button>
             </div>
 
         </div>
@@ -25,18 +26,21 @@ const Carousel = () =>{
         <div className='card'>
             <div className="card_container">
                 <img src={image2} alt=""/>
-                <h1>Welcome to snow waldo</h1>
+                <h1>Welcome to snow wally</h1>
             </div>
+            <button onClick={() => startGame(image2)}>Start</button>
 
         </div>
     )
 
-    return(<div>
+    return(<div className='carousel_container'>
         <AliceCarousel
             infinite
             mouseTracking
+
             items={item}
             responsive={responsive}
+
             />
     </div>)
 }
