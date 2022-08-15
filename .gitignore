@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 *.jpg
+public/wally_icon.jpeg
+src/images/custom-cursor.svg
+src/images/wally_logo.png
