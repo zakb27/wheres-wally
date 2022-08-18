@@ -1,26 +1,50 @@
-import React,{useState} from "react";
+import React,{useState,useRef} from "react";
+import {db,doc,getDoc} from '../firebase/fire'
 import './render.css'
 import Dropdown from "./Dropdown";
+import {addDoc, collection} from "firebase/firestore";
 const Render = ({image}) =>{
 
     const [menuOpen, toggleMenuOpen] = useState(false);
     const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
-
+    const imgRef = useRef();
 
     const drop =(event)=>{
         event.preventDefault();
         const { pageX: x, pageY: y } = event;
         setMenuCoords({ x, y });
         toggleMenuOpen(!menuOpen);
-        console.log(menuOpen);
     }
-    const handleDropdown = (item, x, y)=>{
-        alert('item found' + item.name + 'At' +x.toString()+y.toString())
+
+
+    const handleDropdown = async (item, x, y)=>{
+        const width = imgRef.current.scrollWidth;
+        const height = imgRef.current.scrollHeight;
+
+        const relX = x / width;
+        const relY = (y-60)/height
+        console.log('width is : '+relX.toString())
+        console.log('height is : '+relY.toString())
+
+        const coords_ref = doc(db, "coords", item.id);
+        const docSnap = await getDoc(coords_ref);
+        if (docSnap.exists()) {
+            console.log("Document data:", docSnap.data());
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+
+        if (Math.abs(docSnap.data().relX-relX)<0.042&&
+            Math.abs(docSnap.data().relY-relY)<0.01){
+            alert("YOU FOUND " + item.name)
+        }
+
         toggleMenuOpen(!menuOpen);
     }
     return(
-        <div className="game_container" onClick={drop}>
-            <div className="game_image">
+        <div className="game_container" onClick={drop} ref={imgRef}>
+            <div className="game_image"  >
                 {menuOpen && (
                     <Dropdown itemList={image.itemList}
                               x={menuCoords.x}

@@ -13,7 +13,6 @@ const Dropdown = ({itemList,x,y,handleDropdown}) =>{
             {item.name}</li>
 
     ));
-    console.log(show);
     return(
         <div className="dropdown_container" style={{ top: `calc(${y}px)`, left: `${x}px` }}>
             <ul className='dropdown'>{show}</ul>
