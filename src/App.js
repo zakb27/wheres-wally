@@ -3,6 +3,8 @@ import image from './images/beach-waldo.jpg';
 import Render from './components/Render'
 import Carousel from './components/Carousel'
 import Navbar from "./components/Navbar";
+import {wallyList} from './utils/wallyList'
+
 import './App.css'
 const App=() =>{
     const [currentGame,changeGame] =useState(null);
@@ -22,7 +24,7 @@ const App=() =>{
             {gameStart && <Render image={currentGame}/>}
 
             {(!gameStart) &&
-            <Carousel startGame={startGame}/>
+            <Carousel wallyList ={wallyList} startGame={startGame}/>
                 }
         </div>
     );

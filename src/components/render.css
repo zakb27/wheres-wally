@@ -1,3 +1,8 @@
 .game_image{
     cursor: url('../images/custom-cursor.svg') 50 50, auto;
 }
+
+.game_image img{
+    margin-top: 10vh;
+    height:90vh;
+}

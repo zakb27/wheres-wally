@@ -1,12 +1,16 @@
 nav{
-    width:100%;
+    width:100vw;
     position: fixed;
-    height:10%;
+    top:0;
+    right:0;
+    left:0;
+    height:10vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     background-color: mediumpurple;
     color: #151b25;
+    overflow:auto;
 }
 
 nav img{

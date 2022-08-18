@@ -1,0 +1,32 @@
+.dropdown_container{
+    position: absolute;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    height: 2rem;
+    width: 2rem;
+    border: 2px dashed black;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown{
+    list-style: none;
+    height: auto;
+    width: 5rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transform: translate(32%, 15%);
+    color: white;
+}
+
+.finders{
+    padding: 0.5rem 0.7rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.finders:hover {
+    background-color: rgba(0, 0, 0, 1);
+    transform: scale(1.05);
+}
