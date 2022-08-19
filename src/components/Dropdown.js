@@ -1,6 +1,6 @@
-import React,{useState} from "react";
+import React,{useEffect} from "react";
 import './dropdown.css'
-const Dropdown = ({itemList,x,y,handleDropdown}) =>{
+function Dropdown({itemList,x,y,handleDropdown,handleWin}){
 
     const show = itemList.filter((item) => !item.found).map((item) => (
         <li key={item.id}
@@ -10,14 +10,19 @@ const Dropdown = ({itemList,x,y,handleDropdown}) =>{
                 handleDropdown(item, x, y);
             }}
         >
-            {item.name}</li>
+            {item.name}
+        </li>
 
     ));
+
+
+
+
     return(
         <div className="dropdown_container" style={{ top: `calc(${y}px)`, left: `${x}px` }}>
             <ul className='dropdown'>{show}</ul>
-</div>
+        </div>
     );
 }
 
-export default Dropdown
+export default Dropdown;

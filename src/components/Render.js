@@ -1,9 +1,8 @@
-import React,{useState,useRef} from "react";
+import React,{useState,useRef,useEffect} from "react";
 import {db,doc,getDoc} from '../firebase/fire'
 import './render.css'
 import Dropdown from "./Dropdown";
-import {addDoc, collection} from "firebase/firestore";
-const Render = ({image}) =>{
+const Render = ({image,itemList,handleWin,foundOne}) =>{
 
     const [menuOpen, toggleMenuOpen] = useState(false);
     const [menuCoords, setMenuCoords] = useState({ x: 0, y: 0 });
@@ -16,6 +15,15 @@ const Render = ({image}) =>{
         toggleMenuOpen(!menuOpen);
     }
 
+    useEffect(
+        ()=>{
+            console.log('i am here');
+            const win = itemList.every((item)=> item.found);
+            if(win){
+                handleWin();
+            }
+        },[itemList,handleWin]
+    );
 
     const handleDropdown = async (item, x, y)=>{
         const width = imgRef.current.scrollWidth;
@@ -35,9 +43,9 @@ const Render = ({image}) =>{
             console.log("No such document!");
         }
 
-        if (Math.abs(docSnap.data().relX-relX)<0.042&&
-            Math.abs(docSnap.data().relY-relY)<0.01){
-            alert("YOU FOUND " + item.name)
+        if (Math.abs(docSnap.data().relX-relX)<0.02&&
+            Math.abs(docSnap.data().relY-relY)<0.04){
+            foundOne(item);
         }
 
         toggleMenuOpen(!menuOpen);
@@ -46,10 +54,12 @@ const Render = ({image}) =>{
         <div className="game_container" onClick={drop} ref={imgRef}>
             <div className="game_image"  >
                 {menuOpen && (
-                    <Dropdown itemList={image.itemList}
+                    <Dropdown itemList={itemList}
                               x={menuCoords.x}
                               y={menuCoords.y}
-                              handleDropdown={handleDropdown}/>
+                              handleDropdown={handleDropdown}
+                              handleWin={handleWin}
+                    />
                 )}
                 <img src={image.image} alt="Wally image"/>
             </div>
