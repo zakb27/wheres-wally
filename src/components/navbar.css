@@ -8,9 +8,9 @@ nav{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: mediumpurple;
     color: #151b25;
-    overflow:auto;
+    overflow: hidden;
+
 }
 
 nav img{
