@@ -37,24 +37,3 @@ const GetTimes = ({name})=>{
 }
 
 export default GetTimes;
-
-// const getHighs = async() => {
-//         const q = query(collection(db, 'beach_times'), orderBy('time','asc'),limit(10));
-//
-//         const querySnapshot = await getDocs(q);
-//         let item=[]
-//
-//         querySnapshot.forEach((doc) => {
-//             // doc.data() is never undefined for query doc snapshots
-//             console.log(doc.id, " => ", doc.data());
-//             item.push({
-//                 'id':doc.id,
-//                 "name":doc.data().name ,
-//                 "time":doc.data().time,
-//             })
-//         });
-//
-//
-//         return item;
-//
-//     }

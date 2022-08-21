@@ -15,6 +15,11 @@ const HighScore = ({name,time,handleRestart}) =>{
             </li>
         ));
 
+
+    const submitScore = (name) =>{
+
+    }
+
     console.log(scoresList);
     return <div className="highscore_container">
         <div className="highscore_card">
