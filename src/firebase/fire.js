@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, doc, getDoc, query, where, getDocs, orderBy, limit,setDoc } from "firebase/firestore";
-
+import { collection, doc, getDoc, query, where, getDocs, orderBy, limit,setDoc,addDoc } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -12,10 +11,12 @@ const firebaseConfig = {
     storageBucket: "wheres-wally-c5204.appspot.com",
     messagingSenderId: "489357749422",
     appId: "1:489357749422:web:95f318c4f4ffe0fb2d113f",
-    measurementId: "G-JH9J9WPHPW"
+    measurementId: "G-JH9J9WPHPW",
+    experimentalForceLongPolling: true
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-export {db, collection, doc, getDoc, query, where, getDocs,orderBy ,limit,setDoc };
+
+export {db, collection, doc, getDoc, query, where, getDocs,orderBy ,limit,setDoc,addDoc };

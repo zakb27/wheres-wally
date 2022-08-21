@@ -22,6 +22,7 @@ const App=() =>{
     const resetGame = () =>{
         setTime({ start: 0, end: 0 });
         toggleStart(false);
+        toggleScore(false);
     }
 
     const handleWin = () =>{
