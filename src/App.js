@@ -31,7 +31,7 @@ const App=() =>{
             setTime({ ...time, end: Date.now() });
             toggleStart(false);
             toggleScore(true);
-            changeGame(wallyList[0]);
+            // changeGame(wallyList[0]);
         }
     }
 
