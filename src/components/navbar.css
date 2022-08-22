@@ -1,4 +1,5 @@
-nav{
+
+ nav{
     width:100vw;
     position: fixed;
     top:0;
@@ -10,14 +11,16 @@ nav{
     align-items: center;
     color: #151b25;
     overflow: hidden;
-
 }
+
 
 nav img{
     height:3rem;
     transition: 0.3s;
     cursor: pointer;
+
 }
+
 
 nav img:hover{
     transition:0.3s;

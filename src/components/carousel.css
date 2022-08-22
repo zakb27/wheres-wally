@@ -27,11 +27,10 @@
     justify-content: space-between;
     text-align: center;
     overflow: hidden;
-    background-color: #E5E5E5;
+    background-color: white;
     border-radius: 2rem;
-
     border-radius: 2rem;
-    width: 30rem;
+    width: 60%;
     height: 28rem;
 }
 
@@ -39,6 +38,6 @@
     max-height: 100%;
     height: 100%;
     width: auto;
-    max-width: 10rem;
+    max-width: 50%;
     object-fit: cover;
 }

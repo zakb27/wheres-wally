@@ -6,3 +6,10 @@
     margin-top: 3.75rem;
     height:95vh;
 }
+
+@media screen and (min-width: 1200px){
+    .game_image img{
+        width: 100vw;
+
+    }
+}

@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useState} from "react";
 import logo from '../images/wally_logo.png'
 import './navbar.css'
 import Timer from "./Timer";
 
 const Navbar = ({resetGame,hasStart,itemList}) =>{
+    const [open, toggleOpen] = useState(false);
+
     const show = itemList.filter((item) => !item.found).map((item) => (
         <li key={item.id}
             className='remaining'
@@ -14,15 +16,18 @@ const Navbar = ({resetGame,hasStart,itemList}) =>{
     ));
 
 
-
     return(
         <nav>
             <img onClick={resetGame} src={logo} alt=""/>
             <Timer hasStart={hasStart}/>
-            <div>{show.length}
-                <ul>
+            <div>
+                <button className='dropdown-btn' onClick={(e)=>{toggleOpen(!open)}}>
+                    {show.length}
+                </button>
+                {open && <ul>
                     {show}
-                </ul>
+                        </ul>}
+
             </div>
 
         </nav>

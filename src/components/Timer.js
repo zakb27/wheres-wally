@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from 'react';
 import {formatTime} from "../utils/formatTime";
-
+import './timer.css'
 const Timer = ({hasStart}) =>{
     const [timer, setTimer] = useState(0);
     useEffect(()=>{
