@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/wheres-wally/static/css/main.f8019991.css",
+    "main.js": "/wheres-wally/static/js/main.e95d0ca6.js",
+    "static/media/space-waldo.jpg": "/wheres-wally/static/media/space-waldo.29216419b58474c52d40.jpg",
+    "static/media/snow-waldo.jpg": "/wheres-wally/static/media/snow-waldo.9736162ac89c68ce67a0.jpg",
+    "static/media/beach-waldo.jpg": "/wheres-wally/static/media/beach-waldo.a0e0289ef358bd1a3745.jpg",
+    "static/media/wally_logo.png": "/wheres-wally/static/media/wally_logo.b79de5457128e4fcdd67.png",
+    "static/media/wally.jpeg": "/wheres-wally/static/media/wally.814249c8735137dd18d6.jpeg",
+    "static/media/Odlaw.jpeg": "/wheres-wally/static/media/Odlaw.82ed10b0cd56b4185305.jpeg",
+    "static/media/wizard.jpeg": "/wheres-wally/static/media/wizard.b400466309a95fbaacea.jpeg",
+    "static/media/custom-cursor.svg": "/wheres-wally/static/media/custom-cursor.4794bbd4a50c1cdfd4cb.svg",
+    "index.html": "/wheres-wally/index.html",
+    "main.f8019991.css.map": "/wheres-wally/static/css/main.f8019991.css.map",
+    "main.e95d0ca6.js.map": "/wheres-wally/static/js/main.e95d0ca6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8019991.css",
+    "static/js/main.e95d0ca6.js"
+  ]
+}
