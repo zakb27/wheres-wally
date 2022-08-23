@@ -6,7 +6,7 @@ Link available at https://zakb27.github.io/wheres-wally
 ## Future tasks
 - More maps
 - Enhanced styling
-
+- Mobile support
 
 
 
