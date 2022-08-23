@@ -28,7 +28,7 @@ const Carousel = ({wallyList,startGame}) =>{
         <AliceCarousel
             infinite
             mouseTracking
-
+            keyboardNavigation
             items={item}
             responsive={responsive}
 
