@@ -19,7 +19,7 @@ const Timer = ({hasStart}) =>{
         },[[hasStart]]
     )
 
-    return( <p>{formatTime(timer)}</p>);
+    return( <p className={'timer'}>{formatTime(timer)}</p>);
 }
 
 export default Timer;

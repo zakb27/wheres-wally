@@ -46,6 +46,7 @@ const Render = ({image,itemList,handleWin,foundOne}) =>{
         if (Math.abs(docSnap.data().relX-relX)<0.02&&
             Math.abs(docSnap.data().relY-relY)<0.04){
             foundOne(item);
+
         }
 
         toggleMenuOpen(!menuOpen);

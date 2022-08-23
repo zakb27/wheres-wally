@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from "react";
-import {db,collection,addDoc, query, getDocs, orderBy, limit} from '../firebase/fire'
 import './highscore.css'
 import GetTimes from '../utils/GetTimes'
 import {formatTime} from "../utils/formatTime";
@@ -11,7 +10,8 @@ const HighScore = ({name,time,handleRestart}) =>{
         scores !== null &&
         scores.map((score) => (
             <li key={score.id}>
-                {score.name.toUpperCase()} {formatTime(score.time)}
+                <span className='name'>{score.name.toUpperCase()}</span> <span className='time'>{formatTime(score.time) }</span>
+                <br/>
             </li>
         ));
 
@@ -31,21 +31,27 @@ const HighScore = ({name,time,handleRestart}) =>{
     return <div className="highscore_container">
         <div className="highscore_card">
             <div className='time_container'>
+                <h1>High Scores!</h1>
                 <ul>
                     {scoresList}
                 </ul>
-            </div>
-            <div className="buttons">
-                <button onClick={handleRestart}>Restart</button>
 
-                <form onSubmit={submitScore}>
-                    <label>Name: </label>
-                    <input type="text" name='name' value={user} onChange={(e)=>{
-                        handleChange(e)
-                    }}/>
-                    <input type="submit" value='submit'/>
-                </form>
+                <div className="buttons">
+
+
+                    <form onSubmit={submitScore}>
+                        <label >Name: </label>
+                        <input type="text" name='name'maxlength="3" minLength='2' value={user} onChange={(e)=>{
+                            handleChange(e)
+                        }}/>
+
+                        <input type="submit" value='Submit'/>
+                    </form>
+                    <button onClick={handleRestart}>Restart</button>
+                </div>
+
             </div>
+
         </div>
     </div>
 }

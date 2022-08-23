@@ -52,15 +52,18 @@ const App=() =>{
 
     return (
         <div className="App">
-            <Navbar resetGame={resetGame} hasStart={gameStart} itemList={currentGame.itemList}/>
-            {gameStart && <Render image={currentGame} itemList={currentGame.itemList} handleWin={handleWin} foundOne={foundOne}/>}
+
+            {gameStart && <div>
+                <Navbar resetGame={resetGame} hasStart={gameStart} itemList={currentGame.itemList}/>
+                <Render image={currentGame} itemList={currentGame.itemList} handleWin={handleWin} foundOne={foundOne}/>
+            </div>}
 
             {(!gameStart) &&(
                 <div>
             {highScoreShow ?(
                 <HighScore name={currentGame.id} time={time} handleRestart={resetGame} />
                 ):(
-                    <Carousel wallyList ={wallyList} startGame={startGame}/>)}
+                    <Carousel wallyList ={wallyList} startGame={startGame} itemList={currentGame.itemList}/>)}
                 </div>
            )
                 }

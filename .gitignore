@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/src/keys.js
 # testing
 /coverage
 
@@ -25,3 +25,4 @@ yarn-error.log*
 public/wally_icon.jpeg
 src/images/custom-cursor.svg
 src/images/wally_logo.png
+src/firebase/keys.js
