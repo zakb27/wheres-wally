@@ -30,7 +30,7 @@ const Render = ({image,itemList,handleWin,foundOne}) =>{
         const height = imgRef.current.scrollHeight;
 
         const relX = x / width;
-        const relY = (y-60)/height
+        const relY = (y-60)/height;
         console.log('width is : '+relX.toString())
         console.log('height is : '+relY.toString())
 
@@ -45,7 +45,7 @@ const Render = ({image,itemList,handleWin,foundOne}) =>{
 
         if (Math.abs(docSnap.data().relX-relX)<0.02&&
             Math.abs(docSnap.data().relY-relY)<0.04){
-            alert(item.name + "has been found");
+            alert(item.name + " has been found");
             foundOne(item);
 
         }
