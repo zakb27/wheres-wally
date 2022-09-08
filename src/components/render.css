@@ -3,8 +3,8 @@
 }
 
 .game_image img{
-    margin-top: 3.75rem;
-    height:95vh;
+
+    height:100vh;
 }
 
 @media screen and (min-width: 1400px){

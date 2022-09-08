@@ -1,5 +1,5 @@
 
- nav{
+nav{
     width:100vw;
     position: fixed;
     top:0;
@@ -10,14 +10,16 @@
     justify-content: space-evenly;
     align-items: center;
     color: #151b25;
+
 }
 
 
 nav img{
-    height:3rem;
+    max-height:3rem;
+    max-width: 8rem;
     transition: 0.3s;
     cursor: pointer;
-
+    width:20%;
 }
 
 
@@ -29,15 +31,16 @@ nav img:hover{
 .dropdown_div ul{
     position: absolute;
     background-color: white;
+
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: -1;
     list-style: none;
     border-radius: 10px;
-    margin-left: -25px;
+    margin-left: -17px;
 }
 
- .dropdown_div ul li{
+.dropdown_div ul li{
     display: flex;
     align-items: center;
     padding:10px;
@@ -45,13 +48,19 @@ nav img:hover{
     cursor:pointer;
     font-size:1rem;
 }
- .dropdown_div ul li:last-child{
+.dropdown_div ul li:last-child{
     border:none;
 }
 
- .dropdown_div ul li img{
+.dropdown_div ul li img{
     height:50px;
     width:30px;
 
 
+}
+
+.dropdown-btn{
+    max-width:8rem;
+    width:20vw;
+    padding: 10px 0;
 }
